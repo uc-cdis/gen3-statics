@@ -1,0 +1,6 @@
+{
+  "AWS": {
+    "id": "awsId",
+    "secret": "awsSecret"
+  }
+}

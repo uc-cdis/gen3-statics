@@ -1,0 +1,10 @@
+/node_modules/
+/bin/
+/lib/
+/spec/
+*.log
+*.swp
+*.tar
+*.tgz
+*~
+.DS_Store

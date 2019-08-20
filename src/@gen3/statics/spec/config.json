@@ -1,0 +1,4 @@
+{
+  "bucket": "bucketName",
+  "prefix": "$USER"
+}
