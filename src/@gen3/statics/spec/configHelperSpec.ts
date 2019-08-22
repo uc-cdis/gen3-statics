@@ -1,4 +1,4 @@
-import {loadConfig} from '../lib/configHelper';
+import {loadConfig, processArgs} from '../lib/configHelper';
 
 describe('the configuration helper', function() {
   it('loads configuration as expected', function(done) {
@@ -13,5 +13,13 @@ describe('the configuration helper', function() {
         done();
       }
     );
+  });
+
+  it('processes command line arguments', function() {
+    const config = processArgs(['launch', '--configFolder', '/tmp']);
+    expect(config.command).toBe('launch');
+    expect(config.options['configFolder']).toBe('/tmp');
+    const config2 = processArgs([]);
+    expect(config2.command).toBe('help');
   });
 });
