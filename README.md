@@ -49,6 +49,12 @@ Set the debug environment variable to enable verbose logs in the express and s3-
 export DEBUG='*'
 ```
 
+## Security
+
+Note that this service does not secure access to the S3 bucket.
+Configure the api gateway to authorize access to this service 
+via [arborist](https://github.com/uc-cdis/arborist) or some similar policy engine.
+
 ## Health check 
 
 Just hit `http://localhost:4000/` as a simple health check - should return `HTTP 200` with root level keys in the configured bucket.
