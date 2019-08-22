@@ -4,8 +4,19 @@ little service proxies access to an S3 bucket
 
 ## Use
 
+Compile:
 ```
-npm start -- [--config configFolder] [help|launch]
+npm run compile
+```
+
+Compile and run:
+```
+npm start -- [help|launch] [--configFolder configFolder]
+```
+
+Run without compile (assumes compile already done):
+```
+npm run go -- [help|launch] [--configFolder configFolder]
 ```
 
 ## Configuration
