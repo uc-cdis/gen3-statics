@@ -11,8 +11,7 @@ USER gen3
 WORKDIR /usr/local/gen3-statics
 RUN /bin/rm -rf node_modules \
     && npm ci \
-    && npm run compile \
-    && chmod a+rx dockerStart.sh
+    && npm run compile
 
 USER gen3
 EXPOSE 4000
