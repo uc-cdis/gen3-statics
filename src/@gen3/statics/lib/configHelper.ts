@@ -51,7 +51,7 @@ export function loadConfig(configFolder:string):Promise<ProxyConfig> {
       prefix: config.prefix || '$HOSTNAME',
       accessKeyId: (config.AWS && config.AWS.id) || '$AWS_ACCESS_KEY_ID',
       secretAccessKey: (config.AWS && config.AWS.secret) || '$AWS_SECRET_ACCESS_KEY',
-      overrideCacheControl: 'max-age=100000',
+      overrideCacheControl: 'max-age=300',
       defaultKey: '',
       region: config.region || 'us-east-1'
     };
