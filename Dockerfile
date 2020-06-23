@@ -11,6 +11,7 @@ USER gen3
 WORKDIR /usr/local/gen3-statics
 RUN /bin/rm -rf node_modules \
     && npm ci \
+    && cp aws-config-index.js node_modules/aws-config/index.js \
     && npm run compile
 
 USER gen3
