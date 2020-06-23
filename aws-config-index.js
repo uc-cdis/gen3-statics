@@ -63,16 +63,6 @@ module.exports = function(options) {
     awsOptions.httpOptions.timeout = options.timeout;
   }
 
-  if (options.profile) {
-    awsOptions.credentials = new AWS.SharedIniFileCredentials({
-      profile: options.profile
-    });
-    delete awsOptions.profile;
-  } else if (process.env.AWS_WEB_IDENTITY_TOKEN_FILE) {
-    // support for kubernetes service accounts linked to IAM roles
-    awsOptions.credentials = new AWS.TokenFileWebIdentityCredentials();
-  }
-
   // Configure the proxy, but not if we are on EC2.
   if (options.sslEnabled !== false && isEc2 !== true) {
     if (process.env.HTTPS_PROXY) {
@@ -87,6 +77,15 @@ module.exports = function(options) {
         httpsAgentWorkaroundOptions
       );
     }
+  }
+  if (options.profile) {
+    awsOptions.credentials = new AWS.SharedIniFileCredentials({
+      profile: options.profile
+    });
+    delete awsOptions.profile;
+  } else if (process.env.AWS_WEB_IDENTITY_TOKEN_FILE) {
+    // support for kubernetes service accounts linked to IAM roles
+    awsOptions.credentials = new AWS.TokenFileWebIdentityCredentials({ ... awsOptions});
   }
 
   return awsOptions;
