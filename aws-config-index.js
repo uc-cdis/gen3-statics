@@ -87,8 +87,9 @@ module.exports = function(options) {
     // support for kubernetes service accounts linked to IAM roles
     awsOptions.credentials = new AWS.TokenFileWebIdentityCredentials(
       { 
-        ... awsOptions, 
-        entrypoint: awsOptions.region ? `https://sts.${awsOptions.region}.amazonaws.com` : undefined
+        ... awsOptions,
+        // VPC endpoint friendly
+        stsRegionalEndpoints: 'regional'
       }
     );
   }
