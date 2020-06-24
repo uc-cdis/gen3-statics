@@ -85,7 +85,12 @@ module.exports = function(options) {
     delete awsOptions.profile;
   } else if (process.env.AWS_WEB_IDENTITY_TOKEN_FILE) {
     // support for kubernetes service accounts linked to IAM roles
-    awsOptions.credentials = new AWS.TokenFileWebIdentityCredentials({ ... awsOptions});
+    awsOptions.credentials = new AWS.TokenFileWebIdentityCredentials(
+      { 
+        ... awsOptions, 
+        entrypoint: awsOptions.region ? `https://sts.${awsOptions.region}.amazonaws.com` : undefined
+      }
+    );
   }
 
   return awsOptions;

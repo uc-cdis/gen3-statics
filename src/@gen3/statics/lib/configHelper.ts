@@ -53,7 +53,7 @@ export function loadConfig(configFolder:string):Promise<ProxyConfig> {
       secretAccessKey: (config.AWS && config.AWS.secret) || '$AWS_SECRET_ACCESS_KEY',
       overrideCacheControl: 'max-age=300',
       defaultKey: '',
-      region: config.region || 'us-east-1'
+      region: config.region || process.env.AWS_DEFAULT_REGION || 'us-east-1'
     };
   // check for environment variable delegation
   ['bucket', 'prefix', 'accessKeyId', 'secretAccessKey'].forEach(
