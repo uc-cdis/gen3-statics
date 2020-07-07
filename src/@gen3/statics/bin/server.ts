@@ -4,6 +4,7 @@ import s3Proxy = require('s3-proxy');
 
 import {loadConfig, processArgs, LaunchConfig, ProxyConfig} from '../lib/configHelper';
 
+
 function launchServer(configFolder:string) {
   const app = express();
 
@@ -12,7 +13,8 @@ function launchServer(configFolder:string) {
 
   loadConfig(configFolder).then(
     (config:ProxyConfig) => {
-      app.get('/*', s3Proxy(config));
+      const logger = process.env.DEBUG ? console : undefined;
+      app.get('/*', s3Proxy({ logger, ... config }));
       app.listen(4000, function() {
         console.log('Server listening at http://localhost:4000/');
       });    
