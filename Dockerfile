@@ -1,4 +1,4 @@
-FROM node:12
+FROM quay.io/cdis/node:12
 
 ENV DEBIAN_FRONTEND=noninteractive
 
