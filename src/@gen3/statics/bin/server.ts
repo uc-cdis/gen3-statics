@@ -18,7 +18,8 @@ function launchServer(configFolder: string) {
       directives: {
         "default-src": helmet.contentSecurityPolicy.dangerouslyDisableDefaultSrc,
         "img-src": null,
-        "script-src": null
+        "script-src": null,
+        "script-src-attr": null
       },
     }
   }));
