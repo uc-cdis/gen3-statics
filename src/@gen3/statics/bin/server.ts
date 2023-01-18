@@ -1,7 +1,7 @@
 import fs = require('fs');
 import * as express from 'express';
-import cors from 'cors';
-import helmet from 'helmet';
+import * as cors from 'cors';
+import * as helmet from 'helmet';
 import s3Proxy = require('s3-proxy');
 
 import {loadConfig, processArgs, LaunchConfig, ProxyConfig} from '../lib/configHelper';
@@ -13,7 +13,7 @@ function launchServer(configFolder:string) {
   // enable logging
   app.use(require('morgan')('dev'));
   app.use(cors());
-  app.use(helmet());
+  app.use(helmet.default());
 
   loadConfig(configFolder).then(
     (config:ProxyConfig) => {
