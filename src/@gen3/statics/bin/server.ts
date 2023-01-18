@@ -16,6 +16,8 @@ function launchServer(configFolder: string) {
   app.use(helmet.default({
     contentSecurityPolicy: {
       directives: {
+        "default-src": null,
+        "img-src": null,
         "script-src": null
       },
     }
