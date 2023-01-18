@@ -50,6 +50,7 @@ export function loadConfig(configFolder:string):Promise<ProxyConfig> {
       bucket: config.bucket || '$BUCKET',
       prefix: config.prefix || '$HOSTNAME',
       accessKeyId: (config.AWS && config.AWS.id) || '$AWS_ACCESS_KEY_ID',
+      // file deepcode ignore HardcodedNonCryptoSecret: this is not a secret
       secretAccessKey: (config.AWS && config.AWS.secret) || '$AWS_SECRET_ACCESS_KEY',
       overrideCacheControl: 'max-age=300',
       defaultKey: '',
