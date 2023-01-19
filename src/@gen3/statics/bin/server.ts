@@ -16,10 +16,7 @@ function launchServer(configFolder: string) {
   app.use(helmet.default({
     contentSecurityPolicy: {
       directives: {
-        "default-src": helmet.contentSecurityPolicy.dangerouslyDisableDefaultSrc,
-        "img-src": null,
-        "script-src": null,
-        "script-src-attr": null
+        "script-src": "'self' 'unsafe-inline'"
       },
     }
   }));
