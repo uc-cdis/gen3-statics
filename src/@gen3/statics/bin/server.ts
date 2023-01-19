@@ -16,7 +16,7 @@ function launchServer(configFolder: string) {
   app.use(helmet.default({
     contentSecurityPolicy: {
       directives: {
-        "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://code.jquery.com", "https://cdnjs.cloudflare.com"],
+        "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://code.jquery.com", "https://cdnjs.cloudflare.com", "https://unpkg.com"],
         "script-src-attr": null,
       },
     }
