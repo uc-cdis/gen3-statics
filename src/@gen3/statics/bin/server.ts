@@ -16,6 +16,7 @@ function launchServer(configFolder: string) {
   app.use(helmet.default({
     contentSecurityPolicy: {
       directives: {
+        // modify this section for new remote script needs
         "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://code.jquery.com", "https://cdnjs.cloudflare.com", "https://unpkg.com"],
         "script-src-attr": null,
       },
