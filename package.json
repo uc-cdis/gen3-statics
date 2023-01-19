@@ -1,6 +1,6 @@
 {
   "name": "gen3-statics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "S3 read-through proxy",
   "main": "express.js",
   "scripts": {
