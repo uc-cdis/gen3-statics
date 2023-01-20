@@ -1,6 +1,6 @@
 {
   "name": "gen3-statics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "S3 read-through proxy",
   "main": "express.js",
   "scripts": {
@@ -27,14 +27,17 @@
   },
   "homepage": "https://github.com/uc-cdis/gen3-statics#readme",
   "dependencies": {
+    "aws-config": "^1.4.0",
     "aws-sdk": "^2.702.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "helmet": "^6.0.1",
     "morgan": "^1.9.1",
-    "s3-proxy": "^1.2.1",
-    "aws-config": "^1.4.0"
+    "s3-proxy": "^1.2.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
+    "@types/helmet": "^4.0.0",
     "@types/jasmine": "^3.4.0",
     "@types/node": "^12.20.55",
     "jasmine": "^3.4.0",
