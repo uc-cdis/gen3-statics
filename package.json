@@ -28,7 +28,7 @@
   "homepage": "https://github.com/uc-cdis/gen3-statics#readme",
   "dependencies": {
     "aws-config": "^1.4.0",
-    "aws-sdk": "^2.702.0",
+    "aws-sdk": "^2.1354.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^6.0.1",
