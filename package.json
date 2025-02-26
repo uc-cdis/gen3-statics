@@ -28,9 +28,9 @@
   "homepage": "https://github.com/uc-cdis/gen3-statics#readme",
   "dependencies": {
     "aws-config": "^1.4.0",
-    "aws-sdk": "^2.702.0",
+    "aws-sdk": "^2.1354.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.21.1",
     "helmet": "^6.0.1",
     "morgan": "^1.9.1",
     "s3-proxy": "^1.2.1"
@@ -40,8 +40,8 @@
     "@types/helmet": "^4.0.0",
     "@types/jasmine": "^3.4.0",
     "@types/node": "^12.20.55",
-    "jasmine": "^3.4.0",
-    "jasmine-core": "^3.4.0",
+    "jasmine": "^3.6.0",
+    "jasmine-core": "^3.6.0",
     "typescript": "latest"
   }
 }
