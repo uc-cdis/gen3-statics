@@ -1,10 +1,7 @@
-FROM quay.io/cdis/node:12
-
-ENV DEBIAN_FRONTEND=noninteractive
+FROM quay.io/cdis/nodejs-base:master
 
 COPY . /usr/local/gen3-statics
-RUN useradd -m -s /bin/bash gen3 \
-  && chown -R gen3: /usr/local/gen3-statics
+RUN chown -R gen3:gen3 /usr/local/gen3-statics
 
 USER gen3
 
